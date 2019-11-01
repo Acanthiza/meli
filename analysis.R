@@ -4,7 +4,7 @@
   library(ggfortify)
   library(randomForest)
   
-  # Q1: load and assemble the data from the two files. Which spp has the most records and the least records
+  # Q1: load and assemble the data from the two .csv files. Which spp has the most records and the least records?
   
   dat <- read_csv("HEMorphSpp.csv") %>%
     dplyr::left_join(read_csv("HEMorph.csv")) %>% # the spp are in a different file
@@ -15,7 +15,7 @@
   # A1: NHH have the most records (1620) and SIH have the least (10)
   
   
-  # Q2: Qualitatively, what morphological attributes are correlated with weight
+  # Q2: Qualitatively, what morphological attributes are correlated with weight?
     
   ggplot(dat, aes(Spp,value)) +
     geom_boxplot() +
